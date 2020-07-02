@@ -12,7 +12,11 @@ export abstract class BaseController<GENERIC_CLASS> extends BaseValidation {
     }
 
     async all() {
-        return this._repository.find();
+        return this._repository.find({
+            where: { 
+                isActive: true
+            }
+        });
     }
 
     async one(request: Request) {
@@ -38,7 +42,8 @@ export abstract class BaseController<GENERIC_CLASS> extends BaseValidation {
     async remove(request: Request) {
         // não excluímos registros, apenas deixamos inativos
         let _modelRegister: any;
-        _modelRegister = await this._repository.find(request.params.id);
+        console.log(request.params.id);
+        _modelRegister = await this._repository.findOne(request.params.id);
         if (_modelRegister) _modelRegister.isActive = false;
         return await this._repository.save(_modelRegister);
     }
