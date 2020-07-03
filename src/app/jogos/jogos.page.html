@@ -22,7 +22,7 @@
 
 
 <ion-content>
-    <ion-card> 
+    <ion-card *ngFor="let game of gamesData"> 
 		<ion-item>
 			<ion-avatar slot="start">
 				<img src="assets/img/user.svg">
@@ -30,13 +30,12 @@
 
 			<ion-label class="ion-text-wrap">
 				<ion-text color="dark"><h3>Usuário Logado</h3></ion-text>
-				<p>FIFA20</p>
+				<p>{{ game.name }}</p>
 			</ion-label>
 		</ion-item>
   
 		<ion-card-content>
-            Campeonato de FIFA20, um jogo eletrônico de futebol desenvolvido e publicado pela EA Sports, 
-            lançado mundialmente em 19 de setembro de 2019. 
+            {{ game.description }}
 		</ion-card-content>
 
 		<ion-card-content>
