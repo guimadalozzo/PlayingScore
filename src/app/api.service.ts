@@ -49,3 +49,8 @@ export class ApiService {
 }
 
 
+
+
+
+// https://www.freakyjolly.com/ionic-httpclient-crud-service-tutorial-to-consume-restful-server-api/#.Xv6g1SFodTY
+// 
