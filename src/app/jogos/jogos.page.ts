@@ -1,5 +1,5 @@
+import { JogosService } from './../services/jogos.service';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-jogos',
@@ -10,7 +10,7 @@ export class JogosPage implements OnInit {
   
 	gamesData: any;
 
-	constructor(public apiService: ApiService) { 
+	constructor(public apiService: JogosService) { 
 		this.gamesData = [];
 	}
 

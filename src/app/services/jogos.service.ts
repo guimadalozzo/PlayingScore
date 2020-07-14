@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Game } from './models/game';
+import { Game } from '../models/game';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class JogosService {
 
 	// API path
 	base_path = 'http://localhost:3000/games';
@@ -47,10 +47,3 @@ export class ApiService {
 		)
 	}
 }
-
-
-
-
-
-// https://www.freakyjolly.com/ionic-httpclient-crud-service-tutorial-to-consume-restful-server-api/#.Xv6g1SFodTY
-// 
