@@ -20,31 +20,10 @@
 	</ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-    <ion-card *ngFor="let game of gamesData"> 
-		<ion-item>
-			<ion-avatar slot="start">
-				<img src="assets/img/user.svg">
-			</ion-avatar>
+    <app-jogo-card *ngFor="let game of gamesData" name="{{ game.name }}" description="{{ game.description }}"></app-jogo-card>
 
-			<ion-label class="ion-text-wrap">
-				<ion-text color="dark"><h3>Usuário Logado</h3></ion-text>
-				<p>{{ game.name }}</p>
-			</ion-label>
-		</ion-item>
-  
-		<ion-card-content>
-            {{ game.description }}
-		</ion-card-content>
-
-		<ion-card-content>
-			<ion-button size="small" fill="outline" slot="end">Ver Regras</ion-button>
-		</ion-card-content>
-  	</ion-card>
-  
-    
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
         <ion-fab-button size="large"><ion-icon name="add"></ion-icon></ion-fab-button>
-      </ion-fab>
+    </ion-fab>
 </ion-content>
