@@ -6,10 +6,13 @@ import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
 import config from "./include/config";
+import auth from './middleware/auth';
 
 // create express app
 const app = express();
 app.use(bodyParser.json());
+
+// app.use(auth);
 
 // Cors
 app.use(cors());

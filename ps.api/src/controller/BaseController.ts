@@ -5,6 +5,10 @@ import { BaseValidation } from '../entity/BaseValidation';
 export abstract class BaseController<GENERIC_CLASS> extends BaseValidation {
 
     private _repository: Repository<GENERIC_CLASS>;
+    
+    get repository(): Repository<GENERIC_CLASS> {
+        return this._repository;
+    }
 
     constructor(entity: any) {
         super();
@@ -47,7 +51,7 @@ export abstract class BaseController<GENERIC_CLASS> extends BaseValidation {
         if (_modelRegister) _modelRegister.isActive = false;
         return await this._repository.save(_modelRegister);
     }
-
+    
 }
 
 

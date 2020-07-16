@@ -3,8 +3,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+  },
+  {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    children: [
+      { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
+      { path: 'tabJogos', loadChildren: () => import('./jogos/jogos.module').then(m => m.JogosPageModule) },
+    ]
   },
   {
     path: 'perfil',
@@ -21,6 +28,14 @@ const routes: Routes = [
   {
     path: 'marcador',
     loadChildren: () => import('./marcador/marcador.module').then( m => m.MarcadorPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   }
 ];
 @NgModule({

@@ -12,3 +12,4 @@ import { JogoCardComponent } from './jogo-card.component';
   exports: [JogoCardComponent]
 })
 export class JogoCardComponentModule {}
+
